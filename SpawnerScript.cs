@@ -6,6 +6,7 @@ public class SpawnerScript : MonoBehaviour
 {
 
     public List<GameObject> Walls = new List<GameObject>();
+    private float SpawnerTime = 1.5f;
     private float TimeCounter;
 
     // Start is called before the first frame update
@@ -19,9 +20,10 @@ public class SpawnerScript : MonoBehaviour
     {
         TimeCounter += Time.deltaTime;
 
-        if(TimeCounter % 5 == 0)
+        if(TimeCounter >= SpawnerTime)
         {
             Instantiate(Walls[Random.Range(0, Walls.Count)], transform.position, transform.rotation);
+            TimeCounter = 0;
         }
     }
 }
