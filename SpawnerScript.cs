@@ -23,6 +23,9 @@ public class SpawnerScript : MonoBehaviour
         if(TimeCounter >= SpawnerTime)
         {
             Instantiate(Walls[Random.Range(0, Walls.Count)], transform.position, transform.rotation);
+            // Ou: GameObject spawner;
+            // GameObject muro = Instantiate(Walls[Random.Range(0, Walls.Count)];
+            // muro.transform.position = spawner.transform.position;
             TimeCounter = 0;
         }
     }
